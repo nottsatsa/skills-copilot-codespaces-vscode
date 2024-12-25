@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      #main {
+        display: flex;
+        width: 100vw;
+        padding-top: 44px;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+      }
+      #nav_global {
+        position: fixed;
+        width: 100vw;
+        height: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        background: rgba(245, 245, 247, 0.8);
+        backdrop-filter: blur(10px);
+      }
+      #nav_list {
+        display: flex;
+        width: 996px;
+        height: 44px;
+        padding-right: 0.17px;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 19.14px;
+        flex-shrink: 0;
+      }
+      #item_apple {
+        display: flex;
+        width: 30px;
+        height: 44px;
+        padding: 0px 8px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+      }
+      #atag_store {
+        display: flex;
+        width: 30px;
+        flex-direction: column;
+        justify-content: center;
+        flex-shrink: 0;
+        align-self: stretch;
+      }
+      #atag_style {
+        text-decoration: none;
+        color: #000;
+        text-align: center;
+        font-family: Inter;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 60px; /* 500% */
+        letter-spacing: -0.28px;
+      }
+      .menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-shrink: 0;
+        align-self: stretch;
+        color: #000;
+        text-align: center;
+        font-family: Inter;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 60px; /* 500% */
+        letter-spacing: -0.28px;
+      }
+      #section_tavdah {
+        width: 1920px;
+        height: 52.6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #were {
+        display: flex;
+        height: 16px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+      }
+      #were_child {
+        color: #1d1d1f;
+        text-align: center;
+        font-family: Inter;
+        font-size: 13.891px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20.59px; /* 148.229% */
+        letter-spacing: -0.374px;
+      }
+      #superscript {
+        display: flex;
+        width: 3.31px;
+        height: 16px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+      }
+      #superscript_child {
+        color: #000;
+        text-align: center;
+        font-family: Inter;
+        font-size: 7.109px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20.59px; /* 289.618% */
+        letter-spacing: -0.374px;
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        text-decoration-skip-ink: auto;
+        text-decoration-thickness: auto;
+        text-underline-offset: auto;
+        text-underline-position: from-font;
+      }
+      #link {
+        display: flex;
+        width: 42.5px;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 4px;
+      }
+      #link_child_text {
+        display: flex;
+        width: 32.68px;
+        height: 16px;
+        flex-direction: column;
+        justify-content: center;
+        flex-shrink: 0;
+        color: #06c;
+        text-align: center;
+        font-family: Inter;
+        font-size: 13.781px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20.59px; /* 149.406% */
+        letter-spacing: -0.374px;
+      }
+      #link_child_svg {
+        width: 5.82px;
+        height: 14px;
+        flex-shrink: 0;
+      }
+      #section_duruv {
+        display: flex;
+
+        padding-bottom: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .background_img {
+        width: 100vw;
+        height: 692px;
+        display: flex;
+        overflow: hidden;
+        position: relative;
+      }
+      .pro {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 55px;
+      }
+      .background_img pro {
+        object-fit: cover; /* Ensures the image covers the container without distortion */
+        object-position: center;
+        width: 100%;
+        height: 100%;
+      }
+      .heading_hoyr {
+        display: flex;
+
+        height: 60px;
+
+        color: #f5f5f7;
+        text-align: center;
+        font-family: Inter;
+        font-size: 51.406px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 60px; /* 116.717% */
+        letter-spacing: -0.28px;
+      }
+      .hello {
+        display: flex;
+
+        height: 32px;
+
+        color: #f5f5f7;
+        text-align: center;
+        font-family: Inter;
+        font-size: 24.281px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 32px; /* 131.789% */
+        letter-spacing: 0.196px;
+      }
+      .link_blue {
+        display: flex;
+        width: 86.9px;
+        height: 20px;
+        padding: 12px 21.8px 12px 22px;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        border-radius: 980px;
+      }
+      .link_text {
+        display: flex;
+        width: 86.92px;
+        height: 20px;
+        flex-direction: column;
+        justify-content: center;
+        flex-shrink: 0;
+        color: #fff;
+        text-align: center;
+        font-family: Inter;
+        font-size: 16.867px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px; /* 118.573% */
+        letter-spacing: -0.374px;
+      }
+      .link_buy {
+        display: flex;
+
+        height: 18px;
+        padding: 12px 21.8px 12px 22px;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        border-radius: 980px;
+        border-style: groove;
+      }
+      .buy_text {
+        display: flex;
+        width: 29.4px;
+        height: 20px;
+        flex-direction: column;
+        justify-content: center;
+        flex-shrink: 0;
+        color: #2997ff;
+        text-align: center;
+        font-family: Inter;
+        font-size: 16.734px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px; /* 119.514% */
+        letter-spacing: -0.374px;
+      }
+      .gift {
+        display: flex;
+        width: 263.54px;
+        height: 60px;
+        flex-direction: column;
+        justify-content: center;
+        flex-shrink: 0;
+        color: #1d1d1f;
+        text-align: center;
+        font-family: Inter;
+        font-size: 50.422px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 60px; /* 118.996% */
+        letter-spacing: -0.28px;
+      }
+      .section_gurav {
+        display: grid;
+        gap: 12px;
+      }
+    </style>
+    <title>alim</title>
+  </head>
+  <body
+    style="
+      width: 1920px;
+      height: 4982px;
+      flex-shrink: 0;
+      background-color: #fff;
+    "
+  >
+    <nav id="nav_global">
+      <div id="nav_list">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="15"
+          height="44"
+          viewBox="0 0 15 44"
+          fill="none"
+        >
+          <path
+            d="M13.5729 17.6825C13.052 18.0014 12.6205 18.4473 12.3189 18.9783C12.0172 19.5094 11.8552 20.1083 11.8481 20.719C11.8501 21.4064 12.0538 22.078 12.4338 22.6508C12.8138 23.2236 13.3535 23.6723 13.986 23.9413C13.7366 24.7459 13.3675 25.5084 12.8912 26.2031C12.2096 27.1843 11.4969 28.1654 10.4125 28.1654C9.32808 28.1654 9.04918 27.5354 7.79948 27.5354C6.58078 27.5354 6.14698 28.1861 5.15548 28.1861C4.16398 28.1861 3.47208 27.2772 2.67678 26.1618C1.62625 24.5993 1.04889 22.7668 1.01398 20.8842C1.01398 17.7858 3.02798 16.1437 5.01088 16.1437C6.06438 16.1437 6.94228 16.8356 7.60328 16.8356C8.23328 16.8356 9.21448 16.1023 10.4125 16.1023C11.0284 16.0864 11.6389 16.2223 12.19 16.4978C12.7411 16.7734 13.216 17.1802 13.5729 17.6825ZM9.84448 14.7907C10.3726 14.1695 10.6715 13.3859 10.6914 12.5707C10.6923 12.4633 10.6819 12.356 10.6604 12.2507C9.75323 12.3393 8.91438 12.7717 8.31588 13.4591C7.78268 14.0556 7.47248 14.8183 7.43798 15.6176C7.43838 15.7148 7.44877 15.8117 7.46898 15.9068C7.54049 15.9204 7.6131 15.9273 7.68588 15.9275C8.10395 15.8943 8.51089 15.7763 8.88197 15.5809C9.25305 15.3855 9.58052 15.1166 9.84448 14.7907Z"
+            fill="black"
+            fill-opacity="0.8"
+          />
+        </svg>
+
+        <div id="atag_store">
+          <a
+            id="atag_style"
+            href="https://www.figma.com/design/WwLPXNPZZ7AS59DqoJunZm/Untitled?node-id=667-880&m=dev"
+            target="_blank"
+            >Store</a
+          >
+        </div>
+        <span class="menu" style="width: 24px">Mac</span>
+        <span class="menu" style="width: 24px">iPad</span>
+        <span class="menu" style="width: 38px">iPhone</span>
+        <span class="menu" style="width: 35px">Watch</span>
+        <span class="menu" style="width: 33px">Vision</span>
+        <span class="menu" style="width: 43px">Airpods</span>
+        <span class="menu" style="width: 62px">TV&Home</span>
+        <span class="menu" style="width: 77px">Entertainment</span>
+        <span class="menu" style="width: 66px">Accessories</span>
+        <span class="menu" style="width: 44px">Support</span>
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="44"
+          viewBox="0 0 16 44"
+          fill="none"
+        >
+          <path
+            d="M14.798 27.202L10.928 23.332C11.629 22.403 12.05 21.251 12.05 20C12.05 16.94 9.561 14.45 6.5 14.45C3.44 14.45 0.949997 16.94 0.949997 20C0.949997 23.061 3.44 25.55 6.5 25.55C7.751 25.55 8.903 25.129 9.832 24.428L13.702 28.298C13.853 28.449 14.052 28.526 14.25 28.526C14.448 28.526 14.646 28.45 14.798 28.298C15.101 27.995 15.101 27.505 14.798 27.202ZM2.05 20C2.05 17.546 4.047 15.55 6.5 15.55C8.954 15.55 10.95 17.547 10.95 20C10.95 22.453 8.954 24.45 6.5 24.45C4.046 24.45 2.05 22.454 2.05 20Z"
+            fill="black"
+            fill-opacity="0.8"
+          />
+        </svg>
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="15"
+          height="44"
+          viewBox="0 0 15 44"
+          fill="none"
+        >
+          <path
+            d="M11.8535 16.0283H10.833C10.7236 15.2173 10.3272 14.4723 9.71579 13.9284C9.10433 13.3845 8.31824 13.0776 7.5 13.0635C6.68176 13.0776 5.89567 13.3845 5.28421 13.9284C4.67275 14.4723 4.2764 15.2173 4.167 16.0283H3.147C2.58579 16.0286 2.04766 16.2517 1.65075 16.6485C1.25383 17.0452 1.03058 17.5833 1.03 18.1445V25.86C1.0305 26.4211 1.2536 26.9591 1.65034 27.356C2.04709 27.7528 2.58506 27.976 3.1462 27.9767H11.8532C12.4144 27.9762 12.9526 27.753 13.3494 27.3562C13.7463 26.9593 13.9695 26.4212 13.97 25.86V18.1445C13.9694 17.5834 13.7462 17.0454 13.3494 16.6486C12.9526 16.2519 12.4146 16.0288 11.8535 16.0283ZM7.5 14.1631C8.02741 14.1745 8.53512 14.3656 8.93918 14.7048C9.34325 15.0439 9.61948 15.5108 9.7222 16.0283H5.2778C5.38052 15.5108 5.65675 15.0439 6.06082 14.7048C6.46488 14.3656 6.97259 14.1745 7.5 14.1631ZM12.87 25.86C12.8697 26.1296 12.7625 26.388 12.572 26.5787C12.3814 26.7693 12.123 26.8767 11.8534 26.8771H3.1465C2.87694 26.8766 2.61856 26.7693 2.42801 26.5786C2.23746 26.388 2.13029 26.1295 2.13 25.86V18.1445C2.13032 17.875 2.23752 17.6166 2.4281 17.426C2.61869 17.2354 2.87708 17.1282 3.1466 17.1279H11.8536C12.1231 17.1282 12.3814 17.2355 12.572 17.4261C12.7625 17.6166 12.8697 17.875 12.87 18.1445V25.86Z"
+            fill="black"
+            fill-opacity="0.8"
+          />
+        </svg>
+      </div>
+    </nav>
+    <main id="main">
+      <section_tav id="section_tavdah">
+        <div id="were">
+          <span id="were_child">
+            We’re donating $5 to the Global Fund for every purchase made with
+            Apple Pay at Apple. Through 12/8.</span
+          >
+        </div>
+        <div id="superscript"><span class="superscript_child">1</span></div>
+        <div id="link">
+          <span id="link_child_text">Shop</span>
+          <span id="link_child_svg">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="7"
+              height="14"
+              viewBox="0 0 7 14"
+              fill="none"
+            >
+              <path
+                d="M5.16537 7.01925C5.16537 7.15645 5.11392 7.27649 5.01103 7.37939L2.08495 10.299C1.99492 10.3891 1.88345 10.4341 1.75054 10.4341C1.61763 10.4341 1.50402 10.388 1.4097 10.2958C1.31538 10.2036 1.26822 10.0911 1.26822 9.95819C1.26822 9.82529 1.31752 9.70953 1.41613 9.61092L4.01423 7.01925L1.41613 4.42758C1.31752 4.32898 1.26822 4.21322 1.26822 4.08031C1.26822 3.94741 1.31538 3.83487 1.4097 3.74269C1.50402 3.65051 1.61763 3.60442 1.75054 3.60442C1.88345 3.60442 1.99492 3.64944 2.08495 3.73947L5.01103 6.65912C5.11392 6.76202 5.16537 6.88206 5.16537 7.01925Z"
+                fill="#0066CC"
+              />
+            </svg>
+          </span>
+        </div>
+      </section_tav>
+      <section_duruv id="section_duruv">
+        <div_43 class="background_img">
+          <div
+            class="pro"
+            style="
+              background-image: url(https://s3-alpha-sig.figma.com/img/ec31/75b4/a85620366114b7dc1d62789aa36c0536?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=LG0IFCRz9i4nccca5gaD5ubX2AS-mGZaMeAXpTpgPIpQPTdGlfQxMwUo~sgxEMftA2ZB8OchWM3X9oBOv6KmlTCajGJWViwp~ix-nnPswumFft1CLnoEA82OOfCwwpytTLsNdfQMTjC0i-qLvZQjat8yS05LMD8NXcFmihqaK6Vx4aGrVX-2jdAqt1Frzm7pgml97Z2Uy3xWI7nNfEznie9YH9UOGRkanGpzPXszcY8Y6v8TerJRNvsXAKIdlhn1WtE3T96mxAE3F5L9RR0Rvq~A7r~3zLSJqmCJ3rJ49l624HCOY3n8Z6rPGS1Qj3FDapIv0hyoKDtNjam9CofuIA__);
+              background-position: center;
+            "
+          >
+            <span class="heading_hoyr">iPhone 16 Pro</span>
+            <span class="hello">Hello, Apple Intelligence.</span>
+            <div style="display: flex; gap: 17.42px; padding-top: 19px">
+              <div class="link_blue" style="background-color: #0071e3">
+                <span class="link_text">Learn more</span>
+              </div>
+              <div class="link_buy" style="border-color: #2997ff">
+                <span class="buy_text">Buy</span>
+              </div>
+            </div>
+          </div>
+        </div_43>
+        <div_42 class="background_img">
+          <div
+            class="pro"
+            style="
+              background-image: url(https://s3-alpha-sig.figma.com/img/6e22/72f5/5593e27e01766f0a588a5585328895e1?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Dqw86vulE9Ow~AFvKxOC7t8VKGUWU2bZrBwiOTq1qWWu0FnvY6gE~F6tIABiuI1ZO0awfsGeAC8sydbIRxYwRNJRAjc1aNsZcSLKEc1fnMsYoxPGH0QK1WvXrjwdD0veOQtl0PfnFKCHfqcdaJLhj7SQUxDhluwJ0dM8VTBxDJAHxg3dCvhHXOtUBxoHv9dWHdcm04-i1jyhznzENA6733-yquf6meK6dCaCrl3XUEUju4HMspSrzNR7YpiIvwRwDtNtsmidthijWmLa~7tHAsLUioKGhxvU9~nMVD~RPriAKgRgT6F1zw-jF1yLjjH3kyt3nUDyM4B~hHwE0BuX7g__);
+              background-position: center;
+            "
+          >
+            <span class="heading_hoyr">iPhone 16</span>
+            <span class="hello">Hello, Apple Intelligence.</span>
+            <div style="display: flex; gap: 17.42px; padding-top: 19px">
+              <div class="link_blue" style="background-color: #f5f5f7">
+                <span class="link_text" style="color: #000">Learn more</span>
+              </div>
+              <div class="link_buy" style="border-color: #f5f5f7">
+                <span class="buy_text" style="color: #f5f5f7">Buy</span>
+              </div>
+            </div>
+          </div>
+        </div_42>
+        <div_41 class="background_img">
+          <div
+            class="pro"
+            style="
+              background-image: url(https://s3-alpha-sig.figma.com/img/0399/2040/4089e184b9a9cd5998cf7e5a53e3a3d4?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=D433jpcwa4QjcvFODy5VKBe-hkS4ZT2VWYmQWn1dK5dKWAJf6MA27y4Cl01p9a6rsnqfDbXaFSWm2N5u9oiDVqGQqktplK2WRWvXV7anM~~MWQvxCEkefVdalcDQorhXgPf9y4cQNPbouKjtplZXytCAcfLsH38AkAtBqs~dy5RK598ACEFGp2mEVPeFi2FkZpsaWnc4Ip8csgM3mMJMLVkUpZecdKG-jaemC6t6B7~FPD2SHZyEaJ-g2EeeRvu4UG-JJmmomD4fNNPnZ-AuGQeNAGfxuH6-PFEczGXBNLnVNMF2EHGS2UWRNcHtIdLd21im46ippGafwNQPP2QzHQ__);
+              background-position: center;
+              padding-top: 488px;
+            "
+          >
+            <span class="heading_hoyr" style="color: #000">Gift magic.</span>
+            <span
+              class="hello"
+              style="color: #000; padding-top: 6px; padding-bottom: 19px"
+              >Make their holiday wish come true.</span
+            >
+            <span class="link_blue" style="background-color: #0071e3"
+              ><span class="link_text" style="color: #fff"
+                >Shop gifts</span
+              ></span
+            >
+          </div>
+        </div_41>
+      </section_duruv>
+      <section_gurav id="section_gurav"> </section_gurav>
+    </main>
+  </body>
+</html>
